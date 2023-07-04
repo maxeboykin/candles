@@ -1,0 +1,4 @@
+/home/maxwellboykin/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/231.9161.40/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/maxwellboykin/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/231.9161.40/bin/ninja/linux/x64/ninja -G Ninja -S /home/maxwellboykin/Documents/balloons -B /home/maxwellboykin/Documents/balloons/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/maxwellboykin/Documents/balloons/cmake-build-debug
