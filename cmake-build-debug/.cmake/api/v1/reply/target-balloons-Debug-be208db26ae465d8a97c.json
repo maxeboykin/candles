@@ -42,7 +42,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -fdiagnostics-color=always"
+					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fcolor-diagnostics"
 				},
 				{
 					"fragment" : "-std=gnu11"
@@ -52,7 +52,7 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/home/maxwellboykin/Documents/balloons/."
+					"path" : "/Users/maxboykin/Documents/PersonalProjects/candles/."
 				}
 			],
 			"language" : "C",
