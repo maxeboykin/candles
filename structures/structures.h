@@ -57,17 +57,23 @@ struct friend *lookup(char *first){
     return NULL;
 }
 
-struct friend *install(struct friend friend){
+struct friend *install(char *first, char *last, int month, int day, int year){
     struct friend *np;
     unsigned hashval;
-    if((np = lookup(friend.first)) == NULL) /* not found */ {
+    if((np = lookup(first)) == NULL) /* not found */ {
         np = (struct friend *) malloc(sizeof(*np));
-        if(np == NULL || (np->first = str_dup(friend.first)) == NULL){
+        if(np == NULL || (np->first = str_dup(first)) == NULL){
             return NULL;
         }
-        hashval = hash(friend.first);
-
+        hashval = hash(first);
+        np->next = hashtable[hashval]; // old head
+        hashtable[hashval] = np;
+    } else {
+        free((int *) np->month);
+        free((int *) np->year);
+        free((int *) np->day);
     }
+    if((np->))
 }
 
 char *str_dup(char *s){
