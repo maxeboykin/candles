@@ -45,12 +45,12 @@ unsigned hash(char *s){
     return hashval % HASH_SIZE;
 }
 
-struct friend *lookup(char *first){
+struct friend *lookup(char *last){
     struct friend *np;
-    for(np = hashtable[hash(first)]; np != NULL; np = np->next){
+    for(np = hashtable[hash(last)]; np != NULL; np = np->next){
         // there can be collisions for different names
         // this is why you need to look through
-        if (strcmp(first, np->first) == 0){
+        if (strcmp(last, np->last) == 0){
             return np; /* found */
         }
     }
@@ -60,18 +60,16 @@ struct friend *lookup(char *first){
 struct friend *install(char *first, char *last, int month, int day, int year){
     struct friend *np;
     unsigned hashval;
-    if((np = lookup(first)) == NULL) /* not found */ {
+    if((np = lookup(last)) == NULL) /* not found */ {
         np = (struct friend *) malloc(sizeof(*np));
         if(np == NULL || (np->first = str_dup(first)) == NULL){
             return NULL;
         }
-        hashval = hash(first);
+        hashval = hash(last);
         np->next = hashtable[hashval]; // old head
         hashtable[hashval] = np;
-    } else {
-        free((int *) np->month);
-        free((int *) np->year);
-        free((int *) np->day);
+    } else { /* already there */
+        free((void *) np->first);
     }
     if((np->))
 }
